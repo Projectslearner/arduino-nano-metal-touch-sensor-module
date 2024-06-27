@@ -6,15 +6,15 @@
 */
 
 const int touchSensorPin = 2; // Digital pin connected to the metal touch sensor module
-const int ledPin = 13; // LED pin
 
-void setup() {
+void setup() 
+{
   pinMode(touchSensorPin, INPUT); // Set touch sensor pin as input
-  pinMode(ledPin, OUTPUT); // Set LED pin as output
   Serial.begin(9600); // Initialize serial communication
 }
 
-void loop() {
+void loop() 
+{
   int sensorValue = digitalRead(touchSensorPin); // Read sensor value
   
   // Print sensor value to Serial Monitor
@@ -22,12 +22,10 @@ void loop() {
   Serial.println(sensorValue);
   
   // If sensor value is HIGH, metal touch is detected
-  if (sensorValue == HIGH) {
-    digitalWrite(ledPin, HIGH); // Turn on LED
+  if (sensorValue == HIGH) 
+  {
     Serial.println("Metal Touch Detected!");
-  } else {
-    digitalWrite(ledPin, LOW); // Turn off LED
   }
-  
+ 
   delay(500); // Delay for stability
 }
